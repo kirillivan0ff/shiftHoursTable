@@ -1,5 +1,4 @@
 <?php
-
 function day2digit($var){
     $zero = 0;
     if (strlen($var) === 1){
@@ -43,17 +42,30 @@ table.gridtable td {
 <?php
 $arrStart = unserialize(stripslashes($_POST['arr1']));
 $arrFinish = unserialize(stripslashes($_POST['arr3']));
+$month = (int)$_POST['month'];
+$year = (int)$_POST['year'];
+$userName = $_POST['userName'];
+$total = $_POST['total'];
+
+//////////////////////////////UNCOMENT FOLLOWING LINES FOR TEST/////////////////////////////
+
+//$arrStart = array("0101", "0202", "0305");
+//$arrFinish = array("0109", "0210", "0311");
+//$month = 8;
+//$year = 2013;
+//$total = 177;
+//$userName = "User";
+
+/////////////////////////////////////////////////////////////////////////////////////////////
 
 //this is for the last array element match with ($arrStart[($key+1)] > $x) 
 array_push($arrStart, "9999");
 array_push($arrFinish, "9999");
 
-$month = (int)$_POST['month'];
-$year = (int)$_POST['year'];
+
 $monthLength = date("t", mktime(0,0,0,$month,1,$year));
 $monthName = date("F", mktime(0,0,0,$month,1,$year));
-$userName = $_POST['userName'];
-$total = $_POST['total'];
+
 
 echo "<p>Name: <b>{$userName}</b> Month: <b>{$monthName}</b> Year: <b>{$year}</b> TOTAL: <b>{$total}</b></p>";
 
