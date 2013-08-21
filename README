@@ -1,0 +1,22 @@
+Here is a simple PHP table to show the month shifts marked hour-by-hour.
+It needs to recieve 2 arrays with start and end shift values.
+*values should be at DDHH format
+*same day start and finish values should be added at 2 arrays with the same key value
+*before you transfer arrays they should be serialized.
+*$_POST var names are
+	arr1 - for start shifts array
+	arr2 - for shift end points
+	month - to show the month at the table. 
+	year - to show year
+	userName - for a name
+	total - for a total number of shift hours per this month.
+
+Array Examples:
+[0] -> 0111 [1] ->0217
+[0] -> 0119 [1] - 0222
+
+Will show 2 shifts: 1st - would be 11:00 - 19:00 1/month 
+		    2nd - would be 17:00 - 22:00 2/month
+
+You can find a live examle here http://hours.akamol.info/img/shiftHoursTable.png
+Feel free to contact me at kirillivanoff@gmail.com for any questions.
