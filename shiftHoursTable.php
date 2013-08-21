@@ -1,5 +1,4 @@
 <?php
-require "lock/func.php";
 
 function day2digit($var){
     $zero = 0;
