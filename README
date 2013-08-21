@@ -1,6 +1,6 @@
 Here is a simple PHP table to show the month shifts marked hour-by-hour.
 It needs to recieve 2 arrays with start and end shift values.
-*values should be at DDHH format
+*values should be at DDHH format and (string) variables.
 *same day start and finish values should be added at 2 arrays with the same key value
 *before you transfer arrays they should be serialized.
 *$_POST var names are
