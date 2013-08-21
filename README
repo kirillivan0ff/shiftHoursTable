@@ -1,4 +1,35 @@
 Here is a simple PHP table to show the month shifts marked hour-by-hour.
+What it is looks like?
+
+See the link at the end of this file.
+
+How to use it?
+------------------------------------------------------------------------------------
+
+1. Build 2 arrays as suggested at "Important".
+2. Serialize both of them with the following command for a _POST transer
+	$arr1 = serialize($arr1);
+3. Publish a form if needed. This one will show the user a simple buttion which generated a new window with a form. Offcourse the action argument should be pointed to my file.
+
+			<form action="shiftHoursTable.php" method="POST" target="htmlTable">
+				<input type = "hidden" name = "arr1" value = '<?=$arr1?>'>
+				<input type = "hidden" name = "arr3" value = '<?=$arr3?>'>
+				<input type = "hidden" name = "month" value = '<?=$month?>'>
+				<input type = "hidden" name = "year" value = '<?=$year?>'>
+				<input type = "hidden" name = "userName" value = '<?=$user["name"]?>'>
+				<input type = "hidden" name = "total" value = '<?=$sum?>'>
+				<input type="submit" class="btn btn-small btn-info" value="SHOW ME HTML TABLE">
+			</form>
+
+4. If you need you can modify the weekend value with a following row
+	
+	if ((date("D", mktime(0,0,0,$month,$d,$year))) == "Sat")
+
+	*in my case Sat it's a weekend and it will be painted at blue.
+
+
+Inportant
+------------------------------------------------------------------------------------
 It needs to recieve 2 arrays with start and end shift values.
 *values should be at DDHH format and (string) variables.
 *same day start and finish values should be added at 2 arrays with the same key value
@@ -12,8 +43,8 @@ It needs to recieve 2 arrays with start and end shift values.
 	total - for a total number of shift hours per this month.
 
 Array Examples:
-[0] -> 0111 [1] ->0217
-[0] -> 0119 [1] - 0222
+[0] -> 0111 [1] -> 0217
+[0] -> 0119 [1] -> 0222
 
 Will show 2 shifts: 1st - would be 11:00 - 19:00 1/month 
 		    2nd - would be 17:00 - 22:00 2/month
